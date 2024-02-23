@@ -2,6 +2,11 @@
 get_header();
 ?>
 <main>
-    <?php the_content(); ?>
+	<div class="container">
+		<div class="default-template">
+
+			<?php the_content(); ?>
+		</div>
+	</div>
 </main>
 <?php get_footer(); ?>

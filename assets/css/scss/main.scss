@@ -12,10 +12,9 @@ body {
     font-weight: 400;
 }
 main {
-    min-height: 60vh;
+    min-height: 86vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .form-title {
@@ -73,7 +72,28 @@ text-transform: unset;
 .wpcf7.js {
     margin: auto;
 }
-
+.default-template {
+    padding: rem(24) 0;
+    h1 {
+        font-size: clamp(rem(22), vw(34), rem(34));
+        margin-bottom: clamp(rem(8), vw(12), rem(12));
+				 color: #1b1b1b;
+    }
+    h2 {
+        font-size: clamp(rem(20), vw(24), rem(24));
+        margin-bottom: clamp(rem(6), vw(8), rem(8));
+				 color: #1b1b1b;
+    }
+    h3 {
+        font-size: clamp(rem(18), vw(20), rem(20));
+        margin-bottom: clamp(rem(6), vw(8), rem(8));
+				 color: #1b1b1b;
+    }
+    p,
+    ul {
+        margin-bottom: clamp(rem(6), vw(8), rem(8));
+    }
+}
 @import '_layout';
 @import 'ui/_button';
 @import 'ui/_headings';
