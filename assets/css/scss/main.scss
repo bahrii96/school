@@ -1,0 +1,89 @@
+@use 'inc' as *;
+
+html {
+    font-size: $bodyfontsize;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: $bodyfontsize;
+    font-family: 'Mulish';
+    line-height: 1.25;
+    font-weight: 400;
+}
+main {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-title {
+    color: rgb(13, 13, 13);
+    font-family: 'Mulish';
+    font-size: clamp(rem(18), vw(32), rem(32));
+    font-weight: 600;
+    margin-bottom: clamp(rem(8), vw(16), rem(16));
+text-transform: unset;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+    margin-bottom: clamp(rem(16), vw(24), rem(24));
+    .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(8);
+        @include tablet-md {
+            grid-template-columns: 1fr;
+        }
+    }
+    input,
+    textarea {
+        background: transparent;
+        border: none;
+        padding: clamp(rem(12), vw(16), rem(16));
+        width: 100%;
+        border-radius: 0;
+        border-bottom: 1px solid rgb(13, 13, 13);
+
+        &::placeholder {
+            color: rgb(127, 137, 3);
+            font-family: 'Mulish';
+            font-size: clamp(rem(12), vw(16), rem(16));
+            font-weight: 400;
+        }
+    }
+}
+@include tablet-smm {
+    .btn {
+        display: block;
+        margin: auto;
+    }
+   
+}
+ .wpcf7-spinner {
+        display: none;
+    }
+.wpcf7 textarea {
+    resize: none;
+}
+.wpcf7.js {
+    margin: auto;
+}
+
+@import '_layout';
+@import 'ui/_button';
+@import 'ui/_headings';
+@import 'ui/_article';
+@import 'ui/_aspect-ratio';
+/* Default Page */
+// @import 'inc/_default-content';
+/* Form checkboxes  */
+// @import "inc/_checkboxes";
+// HEADER & FOOTER
+@import 'partials/header';
+@import 'partials/footer';
+

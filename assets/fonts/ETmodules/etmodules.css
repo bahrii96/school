@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "ETmodules"; 
+    src: url("./etmodules.eot"); 
+    src: url("./etmodules.eot") format("embedded-opentype"), 
+    url("./etmodules.woff2") format("woff2"), 
+    url("./etmodules.woff") format("woff"), 
+    url("./etmodules.svg") format("svg"); }

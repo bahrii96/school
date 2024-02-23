@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Miama Nueva';
+    src: url('../miama-nueva/MiamaNueva.woff2') format('woff2'),
+        url('../miama-nueva/MiamaNueva.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+

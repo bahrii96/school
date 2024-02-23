@@ -1,0 +1,98 @@
+@import '../inc/vars';
+
+.footer {
+    position: relative;
+    background: rgb(13, 13, 13);
+    margin-top: auto;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        padding: rem(16) 0;
+        align-items: center;
+        gap: rem(24);
+        @include tablet-md {
+            flex-direction: column;
+        }
+    }
+
+    .copyright {
+        /* H5 regular */
+        color: rgb(66, 66, 66);
+        font-size: clamp(rem(12), vw(16), rem(16));
+        font-weight: 400;
+        line-height: 1.3;
+        padding: rem(8) 0;
+        text-align: right;
+        border-top: 1px solid rgb(66, 66, 66);
+        a {
+            color: rgb(66, 66, 66);
+            transition: all 0.3s;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        @include tablet-md {
+            text-align: center;
+        }
+    }
+    .main-nav-footer {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: rem(36);
+        @include tablet-md {
+            gap: rem(8);
+            flex-direction: column;
+        }
+        a {
+            color: rgb(249, 248, 244);
+            font-family: 'Mulish';
+            font-size: clamp(rem(14), vw(16), rem(16));
+            font-weight: 400;
+
+            padding: rem(10) 0;
+            transition: all 0.3s;
+            &:hover {
+                color: rgb(102, 114, 2);
+            }
+        }
+        li {
+            position: relative;
+            &::after {
+                content: '/';
+                position: absolute;
+                left: -20px;
+                color: rgb(185, 191, 5);
+                @include tablet-md {
+                    display: none;
+                }
+            }
+            &:first-child {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.popup-box {
+    background: rgb(185, 191, 5) !important;
+    padding: rem(40);
+    max-width: rem(40);
+    .wpcf7 .form-title {
+        display: none;
+    }
+    .form-title {
+        em {
+            font-family: 'Miama Nueva';
+        }
+        span {
+            display: block;
+            text-align: right;
+            margin-left: rem(15);
+        }
+    }
+}
+

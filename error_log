@@ -1,0 +1,4 @@
+[26-Nov-2023 21:52:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/elevated/public_html/wp-content/themes/ed-theme/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/elevated/public_html/wp-content/themes/ed-theme/index.php on line 2
