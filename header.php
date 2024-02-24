@@ -9,13 +9,30 @@
 </head>
 <?php
 
-$link = get_field('link', 'options');
+$links = get_field('liks', 'options');
 ?>
 
 <body <?php body_class(); ?>>
+	<div class="header__top">
+		<div class="container">
+			<?php if (is_array($links)) : ?>
+				<?php foreach ($links as $item) {
+					$icon = $item['icon'];
+					$link = $item['link'];
+				?>
+					<div class="header__top-item">
+						<i class="<?php echo $icon ?>"></i>
 
+						<?php echo initLinkHref($link) ?>
+					</div> <?php } ?>
+			<?php endif; ?>
+		</div>
+	</div>
 	<header class="header">
 		<div class="container">
+			<span class="menu-toggle">
+				<small></small>
+			</span>
 			<a href="<?php echo home_url('/'); ?>" class="logo" aria-label="Site Logo">
 				<?php
 				$custom_logo_id = get_theme_mod('custom_logo_site');
@@ -26,9 +43,7 @@ $link = get_field('link', 'options');
 				endif;
 				?>
 			</a>
-			<span class="menu-toggle">
-				<small></small>
-			</span>
+
 			<nav>
 
 				<?php
@@ -38,26 +53,5 @@ $link = get_field('link', 'options');
 					'walker' => new Custom_Walker_Nav_Menu
 				));
 				?>
-
-				<div class="menu-btn menu-btn-mob">
-					<?php if ($link) : ?>
-						<?php
-						$link_url = $link['url'];
-						$link_title = $link['title'];
-						$link_target = $link['target'] ? $link['target'] : '_self'; ?>
-						<a class="btn-white" data-fancybox href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?> </a>
-					<?php endif; ?>
-				</div>
-			</nav>
-			<div class="menu-btn menu-btn-desc">
-				<?php if ($link) : ?>
-					<?php
-					$link_url = $link['url'];
-					$link_title = $link['title'];
-					$link_target = $link['target'] ? $link['target'] : '_self'; ?>
-					<a class="btn-white" data-fancybox href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?> </a>
-				<?php endif; ?>
-
-			</div>
 		</div>
 	</header>

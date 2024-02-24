@@ -2,27 +2,126 @@
 
 .footer {
     position: relative;
-    background: rgb(13, 13, 13);
+    background: rgb(0, 0, 0);
     margin-top: auto;
     &__top {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
         padding: rem(16) 0;
-        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1.3fr 0.7fr;
         gap: rem(24);
         @include tablet-md {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__menu-first,
+    &__menu-second {
+        ul {
+            display: flex;
             flex-direction: column;
+            gap: rem(8);
+            list-style: none;
+            @include tablet-md {
+                align-items: center;
+            }
+            a {
+                color: rgb(193, 189, 174);
+                font-size: clamp(rem(14), vw(16), rem(16));
+                font-weight: 400;
+                transition: all 0.3s;
+                &:hover {
+                    background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-fill-color: transparent;
+                }
+            }
         }
     }
 
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8);
+        @include tablet-md {
+            align-items: center;
+        }
+        i {
+            background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-left: rem(4);
+        }
+        a {
+            color: rgb(193, 189, 174);
+            font-size: clamp(rem(14), vw(16), rem(16));
+            font-weight: 400;
+            transition: all 0.3s;
+            &:hover {
+                background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+        }
+    }
+
+    &__social {
+        h3 {
+            color: rgb(193, 189, 174);
+            font-size: clamp(rem(12), vw(16), rem(16));
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: clamp(rem(4), vw(24), rem(24));
+            @include tablet-md {
+                text-align: center;
+            }
+        }
+        &-box {
+            display: flex;
+            gap: rem(14);
+            @include tablet-md {
+                justify-content: center;
+            }
+            i {
+                background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+                margin-left: rem(4);
+                transition: all 0.3s;
+                font-size: rem(18);
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+    .logo {
+        img {
+            width: rem(170);
+            @include mobile-sm {
+                width: rem(100);
+                object-fit: cover;
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: optimizeQuality;
+            }
+            @include tablet-md {
+                margin: auto;
+            }
+        }
+    }
     .copyright {
-        /* H5 regular */
         color: rgb(66, 66, 66);
         font-size: clamp(rem(12), vw(16), rem(16));
         font-weight: 400;
         line-height: 1.3;
         padding: rem(8) 0;
-        text-align: right;
+
         border-top: 1px solid rgb(66, 66, 66);
         a {
             color: rgb(66, 66, 66);
@@ -35,63 +134,35 @@
             text-align: center;
         }
     }
-    .main-nav-footer {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: rem(36);
-        @include tablet-md {
-            gap: rem(8);
-            flex-direction: column;
-        }
-        a {
-            color: rgb(249, 248, 244);
-            font-family: 'Mulish';
-            font-size: clamp(rem(14), vw(16), rem(16));
-            font-weight: 400;
-
-            padding: rem(10) 0;
-            transition: all 0.3s;
-            &:hover {
-                color: rgb(102, 114, 2);
-            }
-        }
-        li {
-            position: relative;
-            &::after {
-                content: '/';
-                position: absolute;
-                left: -20px;
-                color: rgb(185, 191, 5);
-                @include tablet-md {
-                    display: none;
-                }
-            }
-            &:first-child {
-                &::after {
-                    display: none;
-                }
-            }
-        }
-    }
 }
 
 .popup-box {
-    background: rgb(185, 191, 5) !important;
-    padding: rem(40);
-    max-width: rem(40);
+    padding: clamp(rem(16), vw(40), rem(40)) clamp(rem(16), vw(80), rem(80));
+    background-size: cover;
+    max-width: rem(810) !important;
+    min-height: rem(464);
+    @include tablet-smm {
+        min-height: auto;
+    }
     .wpcf7 .form-title {
         display: none;
     }
-    .form-title {
-        em {
-            font-family: 'Miama Nueva';
-        }
-        span {
-            display: block;
-            text-align: right;
-            margin-left: rem(15);
+    h2 {
+        text-align: center;
+    }
+}
+.popup-answer__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: rem(460);
+    @include tablet-smm {
+        height: auto;
+    }
+    .answer-btn {
+        text-align: center;
+        button {
+            margin-right: rem(60);
         }
     }
 }

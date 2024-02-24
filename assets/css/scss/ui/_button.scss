@@ -1,113 +1,60 @@
+.btn-bl {
+    display: inline-flex;
+	background:transparent;
+    color: rgb(23, 22, 20);
+    font-family: 'Century Gothic';
+    font-size: clamp(rem(12), vw(16), rem(16));
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    padding: rem(8) rem(20) rem(8) rem(0);
+		border:none;
+    &:hover {
+        &::after {
+            background-image: url('./../images/btn-bl-hv.svg');
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        width: rem(64);
+        height: rem(48);
+        top: 50%;
+        right: rem(-60);
+        transition: all 0.3s;
+        background-size: cover;
+        transform: translateY(-50%);
+        background-image: url('./../images/btn-bl.svg');
+    }
+}
 .btn {
     display: inline-flex;
-    color: rgb(249, 248, 244);
-    font-family: 'Mulish';
+	background:transparent;
+    color: rgb(193, 189, 174);
+    font-family: 'Century Gothic';
     font-size: clamp(rem(12), vw(16), rem(16));
     font-weight: 400;
-    line-height: 1.33;
-
-    padding: clamp(rem(12), vw(14), rem(14)) clamp(rem(34), vw(48), rem(48)) clamp(rem(12), vw(14), rem(14)) clamp(rem(24), vw(28), rem(28));
-    border: 1px solid rgb(249, 248, 244);
-    border-radius: rem(60);
-    transition: all 0.3s;
+    text-transform: uppercase;
     position: relative;
+    padding: rem(8) rem(20) rem(8) rem(0);border:none;
     &:hover {
-        background: rgb(249, 248, 244);
-        color: rgb(102, 114, 2);
         &::after {
-            background-image: url('data:image/svg+xml,<svg width="12.315735" height="12.315674" viewBox="0 0 12.3157 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148438 11.4602L11.4622 0.146484L12.1693 0.853516L0.855591 12.1672L0.148438 11.4602ZM0.855591 12.1389L0.855591 12.1672C0.657593 12.3652 0.346436 12.3652 0.148438 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148438 11.4602L0.176758 11.4602L0.855591 12.1389ZM11.3157 1L7.81573 1C7.53571 1 7.31573 0.780029 7.31573 0.5C7.31573 0.219971 7.53571 0 7.81573 0L11.8157 0C12.0957 0 12.3157 0.219971 12.3157 0.5L12.3157 4.5C12.3157 4.78003 12.0957 5 11.8157 5C11.5357 5 11.3157 4.78003 11.3157 4.5L11.3157 1Z" fill="%23667202" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
+            background-image: url('./../images/btn-white-hov.svg');
         }
     }
     &::after {
         content: '';
         position: absolute;
         background-repeat: no-repeat;
-        width: 15px;
-        height: 15px;
-        top: 36%;
-        right: rem(18);
+        width: rem(64);
+        height: rem(48);
+        top: 50%;
+        right: rem(-60);
         transition: all 0.3s;
         background-size: cover;
-        background-image: url('data:image/svg+xml,<svg width="12.315750" height="12.315674" viewBox="0 0 12.3158 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148491 11.4602L11.4622 0.146484L12.1693 0.853516L0.855598 12.1672L0.148491 11.4602ZM0.855598 12.1389L0.855598 12.1672C0.657608 12.3652 0.346481 12.3652 0.148491 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148491 11.4602L0.176773 11.4602L0.855598 12.1389ZM11.3158 1L7.81575 1C7.53575 1 7.31575 0.780029 7.31575 0.5C7.31575 0.219971 7.53575 0 7.81575 0L11.8158 0C12.0957 0 12.3158 0.219971 12.3158 0.5L12.3158 4.5C12.3158 4.78003 12.0958 5 11.8158 5C11.5358 5 11.3158 4.78003 11.3158 4.5L11.3158 1Z" fill="%23F9F8F4" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-        @include tablet-sm {
-            width: 12px;
-            height: 12px;
-        }
-    }
-}
-
-.btn-white {
-    display: inline-flex;
-    color: rgb(102, 114, 2);
-    font-family: 'Mulish';
-    font-size: clamp(rem(12), vw(16), rem(16));
-    font-weight: 400;
-    line-height: 1.33;
-    position: relative;
-    padding: clamp(rem(12), vw(14), rem(14)) clamp(rem(34), vw(48), rem(48)) clamp(rem(12), vw(14), rem(14)) clamp(rem(24), vw(28), rem(28));
-    border: 1px solid rgb(102, 114, 2);
-    border-radius: rem(60);
-    transition: all 0.3s;
-    &:hover {
-        background: rgb(102, 114, 2);
-        color: rgb(249, 248, 244);
-        &::after {
-            background-image: url('data:image/svg+xml,<svg width="12.315750" height="12.315674" viewBox="0 0 12.3158 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148491 11.4602L11.4622 0.146484L12.1693 0.853516L0.855598 12.1672L0.148491 11.4602ZM0.855598 12.1389L0.855598 12.1672C0.657608 12.3652 0.346481 12.3652 0.148491 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148491 11.4602L0.176773 11.4602L0.855598 12.1389ZM11.3158 1L7.81575 1C7.53575 1 7.31575 0.780029 7.31575 0.5C7.31575 0.219971 7.53575 0 7.81575 0L11.8158 0C12.0957 0 12.3158 0.219971 12.3158 0.5L12.3158 4.5C12.3158 4.78003 12.0958 5 11.8158 5C11.5358 5 11.3158 4.78003 11.3158 4.5L11.3158 1Z" fill="%23F9F8F4" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-        }
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        background-repeat: no-repeat;
-        width: 15px;
-        height: 15px;
-        top: 36%;
-        right: rem(18);
-        transition: all 0.3s;
-        background-size: cover;
-        background-image: url('data:image/svg+xml,<svg width="12.315735" height="12.315674" viewBox="0 0 12.3157 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148438 11.4602L11.4622 0.146484L12.1693 0.853516L0.855591 12.1672L0.148438 11.4602ZM0.855591 12.1389L0.855591 12.1672C0.657593 12.3652 0.346436 12.3652 0.148438 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148438 11.4602L0.176758 11.4602L0.855591 12.1389ZM11.3157 1L7.81573 1C7.53571 1 7.31573 0.780029 7.31573 0.5C7.31573 0.219971 7.53571 0 7.81573 0L11.8157 0C12.0957 0 12.3157 0.219971 12.3157 0.5L12.3157 4.5C12.3157 4.78003 12.0957 5 11.8157 5C11.5357 5 11.3157 4.78003 11.3157 4.5L11.3157 1Z" fill="%23667202" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-        @include tablet-sm {
-            width: 12px;
-            height: 12px;
-        }
-    }
-}
-
-.btn-dark {
-    display: inline-flex;
-    color: rgb(13, 13, 13);
-    font-family: 'Mulish';
-    font-size: clamp(rem(12), vw(16), rem(16));
-    font-weight: 400;
-    line-height: 1.33;
-
-    padding: clamp(rem(12), vw(14), rem(14)) clamp(rem(34), vw(48), rem(48)) clamp(rem(12), vw(14), rem(14)) clamp(rem(24), vw(28), rem(28));
-    border: 1px solid rgb(13, 13, 13);
-    border-radius: rem(60);
-    transition: all 0.3s;
-    background-color: transparent;
-    position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        background-repeat: no-repeat;
-        width: 14px;
-        height: 14px;
-        top: 30%;
-        right: rem(20);
-        transition: all 0.3s;
-        background-image: url('data:image/svg+xml,<svg width="12.315735" height="12.315674" viewBox="0 0 12.3157 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148438 11.4602L11.4622 0.146484L12.1693 0.853516L0.855591 12.1672L0.148438 11.4602ZM0.855591 12.1389L0.855591 12.1672C0.657593 12.3652 0.346436 12.3652 0.148438 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148438 11.4602L0.176758 11.4602L0.855591 12.1389ZM11.3157 1L7.81573 1C7.53571 1 7.31573 0.780029 7.31573 0.5C7.31573 0.219971 7.53571 0 7.81573 0L11.8157 0C12.0957 0 12.3157 0.219971 12.3157 0.5L12.3157 4.5C12.3157 4.78003 12.0957 5 11.8157 5C11.5357 5 11.3157 4.78003 11.3157 4.5L11.3157 1Z" fill="%230D0D0D" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-        @include tablet-sm {
-            width: 12px;
-            height: 12px;
-        }
-    }
-    &:hover {
-        background: rgb(13, 13, 13);
-        color: rgb(102, 114, 2);
-        &::after {
-            background-image: url('data:image/svg+xml,<svg width="12.315735" height="12.315674" viewBox="0 0 12.3157 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148438 11.4602L11.4622 0.146484L12.1693 0.853516L0.855591 12.1672L0.148438 11.4602ZM0.855591 12.1389L0.855591 12.1672C0.657593 12.3652 0.346436 12.3652 0.148438 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148438 11.4602L0.176758 11.4602L0.855591 12.1389ZM11.3157 1L7.81573 1C7.53571 1 7.31573 0.780029 7.31573 0.5C7.31573 0.219971 7.53571 0 7.81573 0L11.8157 0C12.0957 0 12.3157 0.219971 12.3157 0.5L12.3157 4.5C12.3157 4.78003 12.0957 5 11.8157 5C11.5357 5 11.3157 4.78003 11.3157 4.5L11.3157 1Z" fill="%23667202" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-        }
+        transform: translateY(-50%);
+        background-image: url('./../images/btn-white.svg');
     }
 }
 
@@ -115,26 +62,30 @@
     p {
         display: inline;
         position: relative;
+         &:hover {
         &::after {
-            content: '';
-            position: absolute;
-            background-repeat: no-repeat;
-            width: 14px;
-            height: 14px;
-            top: 30%;
-            right: rem(20);
-            transition: all 0.3s;
-            background-image: url('data:image/svg+xml,<svg width="12.315735" height="12.315674" viewBox="0 0 12.3157 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148438 11.4602L11.4622 0.146484L12.1693 0.853516L0.855591 12.1672L0.148438 11.4602ZM0.855591 12.1389L0.855591 12.1672C0.657593 12.3652 0.346436 12.3652 0.148438 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148438 11.4602L0.176758 11.4602L0.855591 12.1389ZM11.3157 1L7.81573 1C7.53571 1 7.31573 0.780029 7.31573 0.5C7.31573 0.219971 7.53571 0 7.81573 0L11.8157 0C12.0957 0 12.3157 0.219971 12.3157 0.5L12.3157 4.5C12.3157 4.78003 12.0957 5 11.8157 5C11.5357 5 11.3157 4.78003 11.3157 4.5L11.3157 1Z" fill="%230D0D0D" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-            @include tablet-sm {
-                width: 12px;
-                height: 12px;
-            }
-        }
-        &:hover {
-            &::after {
-                background-image: url('data:image/svg+xml,<svg width="12.315735" height="12.315674" viewBox="0 0 12.3157 12.3157" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 3" d="M0.148438 11.4602L11.4622 0.146484L12.1693 0.853516L0.855591 12.1672L0.148438 11.4602ZM0.855591 12.1389L0.855591 12.1672C0.657593 12.3652 0.346436 12.3652 0.148438 12.1672C-0.0494995 11.9692 -0.0494995 11.6582 0.148438 11.4602L0.176758 11.4602L0.855591 12.1389ZM11.3157 1L7.81573 1C7.53571 1 7.31573 0.780029 7.31573 0.5C7.31573 0.219971 7.53571 0 7.81573 0L11.8157 0C12.0957 0 12.3157 0.219971 12.3157 0.5L12.3157 4.5C12.3157 4.78003 12.0957 5 11.8157 5C11.5357 5 11.3157 4.78003 11.3157 4.5L11.3157 1Z" fill="%23667202" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-            }
+            background-image: url('./../images/btn-bl-hv.svg');
         }
     }
+    &::after {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        width: rem(64);
+        height: rem(48);
+        top: 50%;
+        right: rem(-60);
+        transition: all 0.3s;
+        background-size: cover;
+        transform: translateY(-50%);
+        background-image: url('./../images/btn-bl.svg');
+    }
+    }
+	
+     
+            text-align: center;
+            margin-left: rem(-58);
+        
+    
 }
 

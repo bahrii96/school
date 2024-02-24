@@ -49,21 +49,18 @@
                 $(this).addClass('active');
             }
         });
-        var swiper = new Swiper('.mySwiper', {
-            slidesPerView: 1.6,
+        var swiper = new Swiper('.testimonials-block__swiper', {
+            slidesPerView: 1.2,
             spaceBetween: 8,
-            // centeredSlides: true,
+            centeredSlides: true,
 
             breakpoints: {
                 767: {
-                    slidesPerView: 4.2,
+                    slidesPerView: 4.1,
                     spaceBetween: 20,
                 },
             },
-            navigation: {
-                nextEl: '.swiper-next',
-                prevEl: '.swiper-prev',
-            },
+
             autoplay: {
                 delay: 5000,
             },
@@ -105,28 +102,27 @@
         $('body .side-bar .close-sidebar').click(function (e) {
             $('body').removeClass('fixed');
             $('body .side-bar').removeClass('show');
-        });
-    });
+				});
+			
+			  var nav = document.querySelector('nav');
+		});
+	
+	
 })(jQuery);
 
 document.addEventListener(
     'wpcf7mailsent',
     function (event) {
-        // Закриваємо попередній попап перед відкриттям нового
-        $.fancybox.getInstance().close();
-
-        // Відкриваємо новий попап
+        $.fancybox.close();
         $.fancybox.open({
             src: '#popup-answer',
             type: 'inline',
             opts: {
-                afterClose: function () {
-                    // Викликається після закриття другого попапа
-                    // Додайте код, який ви хочете виконати після закриття другого попапа
-                },
+                afterClose: function () {},
             },
         });
     },
     false,
 );
+
 

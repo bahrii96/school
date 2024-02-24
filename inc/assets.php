@@ -9,8 +9,10 @@ function detect_assets()
 
 		/* Connect styles for Any Templates If needed */
 
-		wp_enqueue_style('miama-nueva', get_stylesheet_directory_uri()
-			. '/assets/fonts/miama-nueva/stylesheet.css', array(), null);
+		wp_enqueue_style('calypso', get_stylesheet_directory_uri()
+			. '/assets/fonts/calypso/stylesheet.css', array(), null);
+		wp_enqueue_style('century', get_stylesheet_directory_uri()
+			. '/assets/fonts/century/stylesheet.css', array(), null);
 
 		if (is_page_template('views/page-home.php')) {
 			wp_enqueue_style('page-home', get_stylesheet_directory_uri()

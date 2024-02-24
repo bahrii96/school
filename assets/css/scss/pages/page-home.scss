@@ -5,9 +5,12 @@
 }
 .hero-block {
     position: relative;
-    padding: clamp(rem(115), vw(220), rem(220)) 0;
-    @include desktop-md {
-        padding: clamp(rem(115), vw(150), rem(150)) 0;
+    padding-top: clamp(rem(45), vw(129), rem(129));
+    padding-bottom: rem(166);
+
+    @include tablet-sm {
+        background: rgb(213, 204, 195);
+        padding-bottom: rem(0);
     }
     &__overlay {
         top: 0;
@@ -19,226 +22,46 @@
         background-size: cover;
     }
 
-    h1 {
-        text-align: center;
-        margin-bottom: clamp(rem(16), vw(50), rem(50));
-    }
-    &__btn {
-        text-align: center;
-    }
-
-    &__item {
-        display: flex;
-        gap: rem(8);
-        align-items: center;
+    &__overlay {
         @include tablet-sm {
-            flex-wrap: wrap;
-            gap: rem(10) 4%;
-            justify-content: center;
-            &.hero-block__item:nth-child(1) {
-                width: 100%;
-            }
-            &.hero-block__item:nth-child(2),
-            &.hero-block__item:nth-child(3) {
-                width: 48%;
-            }
-            &.hero-block__item:nth-child(4) {
-                width: 100%;
-            }
+            display: none;
         }
     }
-}
-
-.about-block {
-    padding: clamp(rem(24), vw(80), rem(80)) 0 0 0;
-    h2 {
-        max-width: rem(585);
-        margin-bottom: clamp(rem(15), vw(38), rem(38));
-    }
-    &__box {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: rem(74);
-        margin-bottom: clamp(rem(24), vw(80), rem(80));
-        @include desktop-md {
-            gap: rem(40);
-            grid-template-columns: 1fr 1fr;
-        }
-        @include tablet-smm {
-            grid-template-columns: 1fr;
-            gap: rem(16);
-        }
-    }
-    &__img {
-        display: flex;
-        gap: rem(16);
-        justify-content: end;
-        margin-left: rem(45);
-        @include tablet-smm {
-            grid-template-columns: 1fr;
-            gap: rem(16);
-        }
-        img {
-            max-height: rem(500);
+    &__overlay-mob {
+        display: none;
+        @include tablet-sm {
             width: 100%;
-            object-fit: cover;
-            @include tablet-smm {
-                max-height: rem(404);
-            }
-            @include mobile-sm {
-                max-height: rem(195);
-            }
-        }
-    }
-
-    &__group {
-    }
-    &__description {
-        h3 {
-            /* H3 */
-            color: rgb(60, 60, 59);
-            font-family: 'Mulish';
-            font-size: clamp(rem(18), vw(32), rem(32));
-            font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: rem(4);
-        }
-        /* H5 regular */
-        color: rgb(60, 60, 59);
-        font-family: 'Mulish';
-        font-size: clamp(rem(12), vw(16), rem(16));
-        font-weight: 400;
-        line-height: 1.3;
-        letter-spacing: 0%;
-        text-align: left;
-        margin-bottom: rem(8);
-    }
-    &__caption {
-        /* H5 miama */
-        color: rgb(102, 114, 2);
-        font-family: 'Miama Nueva' !important;
-        font-size: clamp(rem(12), vw(16), rem(16));
-        line-height: 1.4;
-        max-width: fit-content;
-        margin-left: auto;
-    }
-
-    &__benefits {
-        background: rgb(185, 191, 5);
-        padding: rem(40) 0;
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5%;
-            @include tablet-smm {
-                gap: rem(10) 4%;
-            }
-        }
-        &-item {
-            width: 18%;
-
-            @include tablet-smm {
-                width: 48%;
-            }
-            h3 {
-                text-align: center;
-                max-width: 90%;
-                margin: rem(10) auto 0;
-                /* H4 regular */
-                color: rgb(13, 13, 13);
-                font-family: 'Mulish';
-                font-size: clamp(rem(16), vw(24), rem(24));
-                font-weight: 400;
-                line-height: 1.2;
-            }
+            display: block;
             img {
-                width: rem(77);
-                height: rem(77);
-                margin: auto;
-                @include tablet-sm {
-                    width: rem(40);
-                    height: rem(40);
-                }
+                width: 100%;
             }
         }
     }
-}
 
-.price-block {
-    background: rgb(102, 114, 2);
-    .container {
-        display: flex;
-        gap: rem(210);
+    &__btn {
+        margin-top: rem(-104);
         @include desktop-md {
-            gap: rem(100);
-        }
-        @include tablet-md {
-            gap: rem(40);
+            margin-top: -7%;
         }
         @include tablet-sm {
-            flex-wrap: wrap;
+            margin-top: rem(40);
+            text-align: center;
+            margin-left: rem(-58);
         }
     }
-    &__box {
-        display: flex;
-        align-items: end;
-        flex-direction: column;
-        justify-content: center;
-        @include tablet-sm {
-            padding-top: rem(40);
-            align-items: center;
-        }
-        h2 {
-            font-weight: 600;
-            line-height: 1.3;
-            color: rgb(249, 248, 244);
-            text-align: right;
-            margin-bottom: clamp(rem(24), vw(40), rem(40));
-            @include tablet-sm {
-                text-align: center;
-            }
-        }
-    }
+
     &__img {
-        margin-right: rem(-120);
-        @media screen and (max-width: 1680px) {
-            margin-right: -60px;
-        }
-        @include tablet-md {
-            margin-right: -15px;
-        }
-        @include tablet-sm {
-            width: 110%;
-            margin-left: -15px;
-        }
-    }
-    img {
-        max-width: rem(383);
-        max-height: rem(405);
-        object-fit: cover;
-        @include tablet-sm {
-            max-height: rem(215);
-            max-width: 100%;
+        img {
+            max-width: rem(1260);
             width: 100%;
-        }
-    }
-
-    .btn {
-        padding: clamp(rem(12), vw(14), rem(14)) clamp(rem(24), vw(28), rem(28)) clamp(rem(12), vw(14), rem(14)) clamp(rem(34), vw(48), rem(48));
-
-        &:hover {
-            background: rgb(249, 248, 244);
-            color: rgb(102, 114, 2);
-            &::after {
-                background-image: url('data:image/svg+xml,<svg width="6.660645" height="17.001953" viewBox="0 0 6.66064 17.002" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 4" d="M3.83032 0.5L3.83032 16.5L2.83032 16.5L2.83032 0.5L3.83032 0.5ZM2.85034 0.52002L2.83032 0.5C2.83032 0.219971 3.05029 0 3.33032 0C3.61035 0 3.83032 0.219971 3.83032 0.5L3.8103 0.52002L2.85034 0.52002ZM3.33032 15.7928L5.80518 13.318C6.00317 13.12 6.31421 13.12 6.51221 13.318C6.71021 13.516 6.71021 13.8271 6.51221 14.0251L3.68384 16.8535C3.48584 17.0515 3.1748 17.0515 2.97681 16.8535L0.148438 14.0251C-0.0495605 13.8271 -0.0495605 13.516 0.148438 13.318C0.346436 13.12 0.657471 13.12 0.855469 13.318L3.33032 15.7928Z" fill="%23667202" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
+            @include desktop-md {
+                width: 60%;
+                margin-left: rem(140);
             }
-        }
-        &::after {
-            left: rem(18);
-            background-image: url('data:image/svg+xml,<svg width="6.660645" height="17.001953" viewBox="0 0 6.66064 17.002" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><desc>Created with Pixso.</desc><defs/><path id="Arrow 4" d="M3.83032 0.5L3.83032 16.5L2.83032 16.5L2.83032 0.5L3.83032 0.5ZM2.85034 0.52002L2.83032 0.5C2.83032 0.219971 3.05029 0 3.33032 0C3.61035 0 3.83032 0.219971 3.83032 0.5L3.8103 0.52002L2.85034 0.52002ZM3.33032 15.7928L5.80518 13.318C6.00317 13.12 6.31421 13.12 6.51221 13.318C6.71021 13.516 6.71021 13.8271 6.51221 14.0251L3.68384 16.8535C3.48584 17.0515 3.1748 17.0515 2.97681 16.8535L0.148438 14.0251C-0.0495605 13.8271 -0.0495605 13.516 0.148438 13.318C0.346436 13.12 0.657471 13.12 0.855469 13.318L3.33032 15.7928Z" fill="%23F9F8F4" fill-opacity="1.000000" fill-rule="evenodd"/></svg>');
-            background-size: contain;
+            @include tablet-sm {
+                width: 100%;
+                margin-left: 0;
+            }
         }
     }
 }
@@ -246,437 +69,410 @@
 .services-block {
     padding: clamp(rem(40), vw(120), rem(120)) 0;
 
-    h2 {
-        text-align: right;
-        margin-bottom: clamp(rem(16), vw(40), rem(40));
-        @include tablet-smm {
-            text-align: center;
-        }
-    }
-    &__group {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: rem(170);
-        @include desktop-md {
-            gap: rem(60);
-            grid-template-columns: 1fr 1fr;
-        }
-        @include tablet-smm {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    &__item {
-        padding: clamp(rem(8), vw(16), rem(16)) clamp(rem(16), vw(24), rem(24));
-        border-bottom: 1px solid rgba(60, 60, 59, 0.2);
-        transition: all 0.3s;
-        &.active {
-            border-bottom: 1px solid rgb(185, 191, 5);
-        }
-        h3 {
-            cursor: pointer;
-            color: rgb(60, 60, 59);
-            font-family: 'Mulish';
-            font-size: clamp(rem(16), vw(24), rem(24));
-            font-weight: 400;
-            line-height: 1.33;
-            display: flex;
-            justify-content: space-between;
-            transition: all 0.3s;
-            gap: rem(5);
-            .btn-arrow {
-                position: relative;
-                width: rem(32);
-                height: rem(32);
-                flex: 0 0 auto;
-                @include tablet-sm {
-                    width: rem(24);
-                    height: rem(24);
-                }
-                &::after {
-                    content: '';
-                    position: absolute;
-                    background-image: url(' ./../../images/button.png');
-                    width: 100%;
-                    height: 100%;
-                    background-size: cover;
-                    transition: all 0.3s;
-                }
-            }
-            span {
-                display: none;
-            }
-        }
-
-        &-desc {
-            padding-top: clamp(rem(8), vw(16), rem(16));
-        }
-        .ui-state-active {
-            color: rgb(185, 191, 5);
-            .btn-arrow {
-                transition: transform 0.2s ease-out 0.15s;
-                position: relative;
-                width: rem(32);
-                height: rem(32);
-                @include tablet-sm {
-                    width: rem(24);
-                    height: rem(24);
-                }
-                &::after {
-                    content: '';
-                    position: absolute;
-                    background-image: url(' ./../../images/button-active.png');
-                    width: 100%;
-                    height: 100%;
-                    background-size: cover;
-                }
-            }
-        }
-        &-img {
-            display: none;
-            @include tablet-smm {
-                display: flex;
-                flex-direction: column;
-            }
-            &-first {
-                img {
-                    width: 85%;
-                    object-fit: cover;
-                }
-                margin-bottom: clamp(rem(8), vw(16), rem(16));
-                margin-top: clamp(rem(8), vw(16), rem(16));
-            }
-            &-second {
-                img {
-                    width: 60%;
-                    object-fit: cover;
-                }
-            }
-        }
-    }
-    &__image-box {
-        margin-right: rem(-120);
-        .services-block__item-img-first {
-            img {
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-        .services-block__item-img-second {
-            img {
-                width: 70%;
-                object-fit: cover;
-                max-height: rem(450);
-            }
-        }
-        @media screen and (max-width: 1680px) {
-            margin-right: -15px;
-        }
-
-        @include tablet-smm {
-            display: none;
-        }
-    }
-
-    .services-block__image-box [data-accordion-id] {
-        position: relative;
-        // display: none;
-        height: 0;
-        opacity: 0;
-        transition: 'right' 0.4s ease;
-        right: -1000px;
-        margin: 0;
-    }
-
-    .services-block__image-box [data-accordion-id].active {
-        // display: block;
-        height: auto;
-        opacity: 1;
-        transition: all 1s ease;
-        right: 0;
-        margin-bottom: clamp(rem(20), vw(40), rem(40));
-    }
-    .container {
-        @include desktop-md {
-            padding: 0 rem(15) 0 rem(60);
-        }
-        @include tablet-md {
-            padding: 0 rem(15);
-        }
-    }
-}
-
-.works-block {
-    padding-top: clamp(rem(40), vw(120), rem(120));
-
-    h2 {
-        margin-bottom: clamp(rem(16), vw(50), rem(50));
-    }
     &__list {
-        max-width: rem(1920);
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        img {
-            width: 100%;
-            object-fit: cover;
-            @include desktop-md {
-                max-height: rem(460);
-            }
-            @include tablet-sm {
-                height: rem(300);
-            }
-            @include mobile-sm {
-                height: rem(300);
-            }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: rem(20);
+        @include tablet-sm {
+            grid-template-columns: 1fr;
+            gap: rem(16);
         }
     }
     &__item {
-        position: relative;
-        cursor: pointer;
+        height: rem(405);
+
+        @include desktop-md {
+            height: rem(355);
+        }
+        @include tablet-smm {
+            height: rem(222);
+        }
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        padding: rem(2) clamp(rem(8), vw(28), rem(28));
         transition: all 0.3s;
         &:hover {
-            opacity: 0.8;
-        }
-        &-title {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            background: rgb(102, 114, 2);
-            padding: rem(24) rem(24) rem(24) rem(120);
-            pointer-events: none;
-            @include desktop-md {
-                padding: rem(24) rem(24) rem(24) clamp(rem(24), vw(50), rem(50));
-            }
-            @include tablet-sm {
-                width: 100%;
-            }
-            display: flex;
-            gap: 6%;
-            align-items: center;
-            h3 {
-                /* H4 */
-                color: rgb(249, 248, 244);
-                font-family: 'Mulish';
-                font-size: clamp(rem(16), vw(24), rem(24));
-                font-weight: 600;
-                line-height: 1.2;
-            }
+            background-size: 110% 110%;
+            h3,
             span {
-                color: rgb(249, 248, 244);
-                font-family: Mulish;
-                font-size: clamp(rem(12), vw(16), rem(16));
-                font-weight: 400;
-            }
-        }
-        .btn-arrow {
-            position: relative;
-            width: rem(47);
-            height: rem(47);
-            @include tablet-sm {
-                width: rem(24);
-                height: rem(24);
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                background-image: url(' ./../../images/button-white.png');
-                background-size: contain;
-                width: 100%;
-                height: 100%;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                transition: all 0.3s;
-                padding-top: rem(2);
+                opacity: 0.7;
             }
         }
     }
-    &__item:nth-child(1) {
-        width: 58%;
-        @include tablet-sm {
-            width: 100%;
-        }
+    h3 {
+        color: rgb(248, 244, 241);
+        font-family: 'Calypso';
+        font-size: clamp(rem(24), vw(40), rem(40));
+        font-weight: 400;
+        text-transform: uppercase;
+        width: 70%;
+        transition: all 0.3s;
     }
-    &__item:nth-child(2) {
-        width: 42%;
+    span {
+        position: relative;
+        width: rem(128);
+        height: rem(96);
+        margin: rem(6);
         @include tablet-sm {
-            width: 100%;
+            width: rem(64);
+            height: rem(48);
         }
-    }
-    &__item:nth-child(3) {
-        width: 42%;
-        @include tablet-sm {
+        &::after {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
             width: 100%;
-        }
-    }
-    &__item:nth-child(4) {
-        width: 58%;
-        @include tablet-sm {
-            width: 100%;
-        }
-    }
-    &__item:nth-child(5) {
-        width: 58%;
-        @include tablet-sm {
-            width: 100%;
-        }
-    }
-    &__item:nth-child(6) {
-        width: 42%;
-        @include tablet-sm {
-            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+            background-size: cover;
+            background-image: url('./../../images/btn-white.svg');
         }
     }
 }
 
-.benefits-block {
-    padding: clamp(rem(28), vw(80), rem(80)) 0;
+.discount-block {
+    padding: rem(40) 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7%;
+        @include tablet-smm {
+            grid-template-columns: 1fr;
+            gap: rem(16);
+        }
+    }
+    img {
+        max-height: rem(550);
+        @include tablet-smm {
+            margin: auto;
+        }
+    }
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__description {
+        margin-bottom: clamp(rem(16), vw(24), rem(24));
+    }
+}
+
+.cabinet-block {
+    padding: clamp(rem(40), vw(80), rem(80)) 0;
     h2 {
         text-align: center;
         margin-bottom: clamp(rem(24), vw(40), rem(40));
     }
-    &__box {
+    &__list {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-row-gap: 0;
-        grid-column-gap: 0;
-        position: relative;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: rem(20);
         @include tablet-smm {
-            grid-row-gap: rem(24);
-            padding: rem(20) 0;
+            grid-template-columns: 1fr 1fr;
+            gap: rem(8);
         }
-        .line {
-            position: absolute;
-            left: -100%;
-            width: 1000%;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 1px;
-            background: rgb(102, 114, 2);
-            z-index: -1;
-            @include tablet-smm {
-                height: 100%;
-                width: rem(1);
-                left: 50%;
-                top: 0;
-                transform: translateX(-50%);
+        .grid-image {
+            transition: all 0.3s;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.7;
             }
+        }
+    }
+}
+
+.about-block {
+    padding: clamp(rem(24), vw(80), rem(80)) 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 6%;
+        max-width: rem(1390);
+        margin: auto;
+        @include desktop-md {
+            max-width: rem(1250);
+        }
+        @include tablet-smm {
+            grid-template-columns: 1fr;
+            gap: rem(24);
+        }
+    }
+
+    &__img {
+        display: flex;
+        gap: rem(20);
+        &-first {
+            margin-top: clamp(rem(16), vw(55), rem(55));
+        }
+    }
+    &__group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__description {
+        margin-bottom: clamp(rem(16), vw(24), rem(24));
+    }
+}
+
+.benefits-block {
+    padding: clamp(rem(28), vw(40), rem(40)) 0 clamp(rem(28), vw(80), rem(80));
+    h2 {
+        text-align: center;
+        margin-bottom: clamp(rem(24), vw(40), rem(40));
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: rem(1390);
+        margin: auto;
+        gap: 5%;
+        @include desktop-md {
+            max-width: rem(1250);
         }
         @include tablet-smm {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(6, 1fr);
+            gap: rem(24);
         }
-    }
-    .item-1 {
-        grid-area: 1 / 1 / 2 / 2;
-        margin-bottom: -20px;
-        justify-content: end;
-        @include tablet-smm {
-            grid-area: 1 / 1 / 2 / 2;
-            margin-right: rem(-20);
-            margin-bottom: 0;
-        }
-    }
-    .item-2 {
-        grid-area: 2 / 2 / 3 / 3;
-        margin-top: -20px;
-        justify-content: start;
-        h3 {
-            order: 2;
-        }
-        @include tablet-smm {
-            grid-area: 2 / 2 / 3 / 3;
-            margin-top: 0;
-            margin-left: -20px;
-        }
-    }
-    .item-3 {
-        grid-area: 1 / 3 / 2 / 4;
-        margin-bottom: -20px;
-        justify-content: end;
-        @include tablet-smm {
-            grid-area: 3 / 1 / 4 / 2;
-            margin-right: -20px;
-            margin-bottom: 0;
-        }
-    }
-    .item-4 {
-        grid-area: 2 / 4 / 3 / 5;
-        margin-top: -20px;
-        justify-content: start;
-        h3 {
-            order: 2;
-        }
-        @include tablet-smm {
-            grid-area: 4 / 2 / 5 / 3;
-            margin-top: 0;
-            margin-left: -20px;
-        }
-    }
-    .item-5 {
-        grid-area: 1 / 5 / 2 / 6;
-        margin-bottom: -20px;
-        justify-content: end;
-        @include tablet-smm {
-            grid-area: 5 / 1 / 6 / 2;
-            margin-right: -20px;
-            margin-bottom: 0;
-        }
-    }
-    .item-6 {
-        grid-area: 2 / 6 / 3 / 7;
-        margin-top: -20px;
-        justify-content: start;
-        h3 {
-            order: 2;
-        }
-        @include tablet-smm {
-            grid-area: 6 / 2 / 7 / 3;
-            margin-top: 0;
-            margin-left: -20px;
+        @include tablet-sm {
+            grid-template-columns: 1fr;
+            gap: rem(16);
         }
     }
 
+    &__item-img {
+        margin-bottom: clamp(rem(8), vw(20), rem(20));
+        img {
+            transition: all 0.3s;
+            margin: auto;
+        }
+    }
+    h3 {
+        color: #000000;
+        text-align: center;
+        font-family: 'Century Gothic';
+        font-size: clamp(rem(16), vw(24), rem(24));
+        text-transform: uppercase;
+        margin-bottom: rem(8);
+        font-weight: 400;
+    }
+    &__item-desc {
+        text-align: center;
+        @include tablet-sm {
+            width: 90%;
+            margin: auto;
+        }
+    }
     &__item {
-        display: flex;
-        flex-direction: column;
-
-        gap: rem(24);
-        @include tablet-smm {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+        transition: all 0.3s;
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
         }
+    }
+}
 
+.injection-block {
+    padding: clamp(rem(24), vw(80), rem(80)) 0;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+        justify-content: space-between;
+        h2 {
+            max-width: rem(500);
+            @include tablet-md {
+                max-width: 50%;
+            }
+            @include tablet-sm {
+                max-width: 80%;
+            }
+        }
+        @include tablet-sm {
+            flex-direction: column;
+            align-items: normal;
+        }
+    }
+    &__link {
+        margin-right: rem(60);
+        @include tablet-sm {
+            margin-right: 0;
+            margin-bottom: rem(20);
+        }
+    }
+    &__box {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6%;
+        padding: clamp(rem(14), vw(30), rem(30)) clamp(rem(24), vw(40), rem(40));
+        @include tablet-sm {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
         h3 {
-            color: rgb(60, 60, 59);
-            font-family: Mulish;
+            color: rgb(23, 22, 20);
+            font-family: 'Century Gothic';
             font-size: clamp(rem(16), vw(24), rem(24));
             font-weight: 400;
-            line-height: 1.25;
-            text-align: center;
-            height: rem(120);
-            @include desktop-md {
-                height: auto;
+            text-transform: uppercase;
+            margin-top: rem(20);
+        }
+    }
+    &__item-box-item {
+        border-bottom: 1px solid rgb(125, 121, 111);
+        padding: rem(16) rem(12);
+        display: flex;
+        gap: rem(20);
+        justify-content: space-between;
+        @include tablet-sm {
+            padding: 8;
+        }
+        .procedure,
+        .price {
+            font-size: clamp(rem(12), vw(16), rem(16));
+        }
+    }
+}
+.aesthetic-block {
+    padding: clamp(rem(24), vw(80), rem(80)) 0;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+        justify-content: space-between;
+        h2 {
+            max-width: rem(500);
+            @include tablet-md {
+                max-width: 50%;
+            }
+            @include tablet-sm {
+                max-width: 80%;
             }
         }
-        &-icon {
-            margin: 0 auto;
-            width: rem(40);
-            height: rem(40);
-            display: flex;
-            flex: 0 0 auto;
-            @include tablet-smm {
-                margin: 0;
-            }
-            img {
-                width: rem(40);
-                height: rem(40);
+        @include tablet-sm {
+            flex-direction: column;
+            align-items: normal;
+        }
+    }
+    &__link {
+        margin-right: rem(60);
+        @include tablet-sm {
+            margin-right: 0;
+            margin-bottom: rem(20);
+        }
+    }
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6%;
+        @include tablet-sm {
+            grid-template-columns: 1fr;
+            gap: rem(16);
+        }
+    }
 
-                object-fit: contain;
-                object-position: center;
+    &__left {
+        background: rgb(213, 204, 195);
+        padding: clamp(rem(24), vw(40), rem(40));
+    }
+    &__item {
+        border-bottom: 1px solid rgb(125, 121, 111);
+        padding: rem(16) rem(12);
+        display: flex;
+        gap: rem(20);
+        justify-content: space-between;
+        @include tablet-sm {
+            padding: 8;
+        }
+        .procedure,
+        .price {
+            font-size: clamp(rem(12), vw(16), rem(16));
+        }
+    }
+
+    &__img {
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: right bottom;
+        }
+    }
+}
+
+.selection-block {
+    padding: clamp(rem(24), vw(80), rem(80)) 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6%;
+        max-width: rem(1390);
+        margin: auto;
+        @include desktop-md {
+            max-width: rem(1250);
+        }
+        @include tablet-smm {
+            grid-template-columns: 1fr;
+            gap: rem(24);
+        }
+    }
+
+    &__img {
+        display: flex;
+        @include tablet-smm {
+            order: 2;
+        }
+        img {
+            margin-top: auto;
+            margin-left: auto;
+            @include tablet-smm {
+                margin-left: 0;
             }
+        }
+    }
+    &__box {
+        margin-bottom: rem(40);
+        @include tablet-smm {
+            margin-bottom: 0;
+        }
+        &-img {
+            margin-bottom: clamp(rem(16), vw(40), rem(40));
+            @include tablet-smm {
+                display: flex;
+                img {
+                    margin-left: auto;
+                }
+            }
+        }
+        h2 {
+            background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+    }
+    &__description {
+        margin-bottom: clamp(rem(16), vw(24), rem(24));
+        color: rgb(193, 189, 174);
+    }
+
+    &__link {
+        @include tablet-smm {
+            text-align: right;
+            margin-right: rem(60);
         }
     }
 }
@@ -689,201 +485,94 @@
     position: relative;
 
     h2 {
-        color: rgb(60, 60, 59);
+        text-align: center;
+        margin-bottom: clamp(rem(24), vw(40), rem(40));
     }
-    .swiper {
-        overflow: initial;
-        &::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: #fff;
-            top: 0;
-            z-index: 5;
-            left: -100%;
-            // @include tablet-sm {
-            //     display: none;
-            // }
-        }
-    }
-    .swiper-nav {
+    &__top {
         display: flex;
-        justify-content: end;
-        margin-bottom: clamp(rem(24), vw(70), rem(70));
-        gap: rem(16);
-        button {
-            border: none;
+        align-items: center;
+        gap: rem(8);
+        h3 {
+            font-size: rem(16);
+            font-weight: 400;
+        }
+        span {
+            color: rgb(125, 121, 111);
+            font-size: rem(14);
+        }
+    }
+    .grid-image-box {
+        display: flex;
+        flex-direction: column;
+        gap: rem(6);
+        background: rgb(213, 204, 195);
+        padding: clamp(rem(8), vw(16), rem(16));
+    }
 
-            transition: all 0.3s;
-            &:hover {
-                opacity: 0.7;
-            }
-        }
-        @include tablet-sm {
-            gap: rem(8);
-        }
-        .btn-arrow {
-            position: relative;
-            width: rem(60);
-            height: rem(60);
-            @include tablet-sm {
-                width: rem(30);
-                height: rem(30);
-            }
-            &::after {
-                content: '';
-                position: absolute;
-                background-image: url(' ./../../images/button-right.png');
-                width: 100%;
-                height: 100%;
-                background-size: cover;
-                transition: all 0.3s;
-                left: 0;
-                top: 0;
-            }
-        }
-        .swiper-prev {
-            .btn-arrow {
-                &::after {
-                    background-image: url(' ./../../images/button-left.png');
-                }
-            }
+    &__avatar {
+        width: rem(40);
+        height: rem(40);
+        border-radius: 50%;
+        overflow: hidden;
+        flex: 0 0 auto;
+        img {
+            object-fit: cover;
         }
     }
 }
 
 .contact-block {
     padding: clamp(rem(24), vw(80), rem(80)) 0;
-
-    .container {
-        display: grid;
-        grid-template-columns: 0.65fr 1.35fr;
-        gap: rem(60);
-        @include desktop-md {
-            gap: rem(40);
-        }
-        @include tablet-smm {
-            grid-template-columns: 1fr;
-            gap: rem(30);
-        }
-    }
-
-    &__group {
-        display: flex;
-        justify-content: space-between;
-        @include tablet-sm {
-            flex-direction: column;
-        }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &__box {
+        max-width: rem(680);
+        margin: auto;
         h2 {
-            color: rgb(249, 248, 244);
-            font-family: 'Mulish';
-            font-size: clamp(rem(18), vw(32), rem(32));
-            font-weight: 600;
-            margin-bottom: rem(6);
-            text-transform: unset;
-            @include tablet-sm {
-                text-align: center;
-            }
-        }
-    }
-    &__description {
-        color: rgb(161, 168, 99);
-        font-family: 'Mulish';
-        font-size: clamp(rem(16), vw(24), rem(24));
-        font-weight: 400;
-        margin-bottom: rem(6);
-        @include tablet-sm {
             text-align: center;
         }
     }
-    &__group-inf {
-        background: rgb(102, 114, 2);
-        padding-left: 7%;
-        width: 100%;
+    &__description {
+        text-align: center;
+        margin-bottom: clamp(rem(16), vw(40), rem(40));
+    }
+}
+
+.map-block {
+    padding-top: clamp(rem(24), vw(80), rem(80));
+    &__top {
         display: flex;
         align-items: center;
+        gap: rem(20);
         justify-content: space-between;
+        padding-bottom: clamp(rem(24), vw(80), rem(80));
+
         @include tablet-sm {
-            flex-wrap: wrap;
-            padding-left: 0;
-            padding: rem(24) 0;
-        }
-        &-box {
-            @include tablet-sm {
-                width: 100%;
-            }
-        }
-        &-contact {
-            display: flex;
-            gap: rem(16);
             flex-direction: column;
-            @include tablet-sm {
-                align-items: center;
-                img {
-                    width: rem(16);
-                }
-            }
-            .contact-item {
-                display: flex;
-                align-items: center;
-                gap: rem(4);
-                a {
-                    color: rgb(249, 248, 244);
-                    font-family: 'Mulish';
-                    font-size: clamp(rem(16), vw(24), rem(24));
-                    font-weight: 400;
-                    line-height: 1.2;
-                    transition: all 0.3s;
-                    &:hover {
-                        opacity: 0.7;
-                    }
-                }
-                .icon-other {
-                    display: flex;
-                    align-items: center;
-                    gap: rem(2);
-                }
-            }
+            align-items: center;
         }
+				h2{
+					@include tablet-sm {
+						text-align: center;
+					}
+				}
     }
-    &__group-inf-social {
-        margin-right: rem(17);
+    &__link {
+        margin-right: rem(60);
         @include tablet-sm {
-            margin-top: rem(16);
             margin-right: 0;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        a {
-            &:hover {
-                img {
-                    filter: brightness(0) saturate(100%) invert(64%) sepia(98%) saturate(485%) hue-rotate(16deg) brightness(94%) contrast(96%);
-                }
-            }
+            margin-bottom: rem(20);
+            margin-left: rem(-58);
         }
     }
-    &__img {
-        width: 56%;
-        @include tablet-sm {
+    &__map {
+        iframe {
             width: 100%;
-        }
-        img {
-            object-fit: cover;
-            height: 100%;
-            max-height: rem(380);
             @include tablet-sm {
-                max-height: rem(200);
-                width: 100%;
+                height: rem(200);
             }
         }
-    }
-    &__form {
-        display: flex;
-        align-items: center;
-        background: rgb(185, 191, 5);
-        padding: clamp(rem(24), vw(35), rem(35)) clamp(rem(16), vw(45), rem(45));
     }
 }
 

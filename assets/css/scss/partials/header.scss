@@ -21,14 +21,35 @@ body {
     }
 }
 
+.header__top {
+    padding: rem(8) 0;
+    position: relative;
+    z-index: 11;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: rem(6);
+    }
+    a {
+        /* H6 */
+        color: rgb(0, 0, 0);
+        font-size: clamp(rem(12), vw(14), rem(14));
+        font-weight: 400;
+        transition: all 0.3s;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
 .header {
     z-index: 99;
     left: 0;
     width: 100%;
     top: 0;
     transition: all 0.3s ease-in-out;
-    padding: rem(16) 0;
-    background: rgb(249, 248, 244);
+    overflow: visible;
+    background: rgb(0, 0, 0);
     position: sticky;
     @include tablet-md {
         margin-bottom: rem(0);
@@ -46,8 +67,12 @@ body {
 
     .logo {
         img {
-            @include tablet-sm {
-                max-width: rem(120);
+					width: rem(170);
+            @include mobile-sm {
+                width: rem(100);
+                object-fit: cover;
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: optimizeQuality;
             }
         }
     }
@@ -55,6 +80,7 @@ body {
         display: flex;
         gap: rem(40);
         align-items: center;
+
         .menu-btn-mob {
             display: none;
             @include tablet-md {
@@ -74,47 +100,40 @@ body {
                 line-height: 1em;
 
                 z-index: 2;
-                &::after {
-                    content: '/';
-                    position: absolute;
-                    left: -20px;
-                    @include tablet-md {
-                        display: none;
-                    }
-                }
-                &:first-child {
-                    &::after {
-                        display: none;
-                    }
-                }
+
                 &.menu-item-has-children {
                     display: flex;
                     gap: rem(4);
                     align-items: center;
                     i {
-                        color: #fff;
+                        color: rgb(248, 244, 241);
                         height: fit-content;
                         transition: all 0.3s;
                     }
                     &:hover {
                         i {
                             transform: rotate(180deg);
-                            color: rgb(102, 114, 2);
+                            color: rgb(251, 251, 251);
                         }
                     }
                 }
                 a {
                     /* H5 upper */
                     /* H5 regular */
-                    color: rgb(60, 60, 59);
+                    color: rgb(248, 244, 241);
                     font-family: 'Mulish';
                     font-size: clamp(rem(14), vw(16), rem(16));
                     font-weight: 400;
 
                     padding: rem(10) 0;
                     transition: all 0.3s;
+                    text-transform: uppercase;
                     &:hover {
-                        color: rgb(102, 114, 2);
+                        background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
                     }
                 }
 
@@ -227,8 +246,8 @@ body {
 
         small {
             position: absolute;
-            background: rgb(102, 114, 2);
-            right: 0;
+            background: linear-gradient(127.78deg, rgb(195, 154, 45) 12.056%, rgb(234, 211, 109) 40.204%, rgb(201, 160, 52) 89.261%);
+            left: 0;
             top: rem(9);
             width: 60%;
             height: 2px;
@@ -238,7 +257,7 @@ body {
         &::before,
         &::after {
             content: '';
-            background: rgb(102, 114, 2);
+            background: linear-gradient(127.78deg, rgb(195, 154, 45) 12.056%, rgb(234, 211, 109) 40.204%, rgb(201, 160, 52) 89.261%);
             position: absolute;
             width: 100%;
             height: rem(2);
@@ -261,18 +280,19 @@ body {
         }
         nav {
             display: block;
-            position: fixed;
-            background: white;
-            right: -100%;
+            position: absolute;
+
+            background: rgb(0, 0, 0);
+            left: -100%;
             top: 0;
-            height: 100%;
+            height: 200vh;
             z-index: 10;
-            padding-top: rem(100);
+            padding-top: rem(90);
             padding-left: rem(24);
             padding-right: rem(24);
             overflow: auto;
             transition: 0.3s ease-in-out;
-            width: min-content;
+            width: fit-content;
             .btn {
                 margin-top: rem(30);
             }
@@ -308,7 +328,7 @@ body {
 
             &.is-active {
                 display: block;
-                right: 0;
+                left: 0;
 
                 .close {
                     position: absolute;
