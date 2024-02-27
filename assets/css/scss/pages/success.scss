@@ -1,0 +1,76 @@
+@import '../inc/vars';
+
+.success-block {
+    padding: rem(100) 0;
+    background-size: cover;
+    @include desktop-md {
+        padding: rem(60) 0;
+    }
+    .container {
+        position: relative;
+    }
+    @include tablet-smm {
+        padding: rem(62) 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-family: 'e-Ukraine Head';
+        font-size: clamp(rem(32), vw(60), rem(60));
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: rem(8);
+    }
+
+    &__desc {
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+    &__box-text {
+        max-width: 50%;
+        margin-left: 15%;
+        @include tablet-md {
+            max-width: 90%;
+            margin-left: 0;
+            margin: auto;
+        }
+    }
+    &__box {
+        max-width: 80%;
+        padding: rem(250) 0;
+        border: 1px solid rgb(196, 156, 77);
+        @include desktop-md {
+            padding: rem(180) 0;
+        }
+        @include tablet-md {
+            max-width: 100%;
+            padding: rem(40) rem(16) rem(150);
+        }
+    }
+
+    &__form {
+			h2{
+				text-align: left;
+			}
+			background-color: rgb(196, 156, 77);
+			padding: clamp(rem(40), vw(68), rem(68)) clamp(rem(16), vw(50), rem(50));
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40%;
+        @include desktop-md {
+            right: rem(60);
+        }
+
+        @include tablet-md {
+            right: 0;
+            position: relative;
+            transform: translateY(0);
+            margin: rem(-100) auto 0;
+            width: 85%;
+        }
+    }
+}
+

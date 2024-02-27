@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Calypso';
-    src: url('Calypso-Regular.woff2') format('woff2'),
-        url('Calypso-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-

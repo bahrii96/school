@@ -5,43 +5,8 @@ body {
     &.fixed {
         overflow: hidden;
     }
-
-    &.is-active {
-        // &::after {
-        //     content: '';
-        //     position: absolute;
-        //     width: 100%;
-        //     height: 100%;
-        //     background: rgba(0, 0, 0, 0.6);
-        //     transition: 0.3s ease-in-out;
-        //     top: 0;
-        //     left: 0;
-        //     z-index: 50;
-        // }
-    }
 }
 
-.header__top {
-    padding: rem(8) 0;
-    position: relative;
-    z-index: 11;
-    .container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: rem(6);
-    }
-    a {
-        /* H6 */
-        color: rgb(0, 0, 0);
-        font-size: clamp(rem(12), vw(14), rem(14));
-        font-weight: 400;
-        transition: all 0.3s;
-        &:hover {
-            opacity: 0.7;
-        }
-    }
-}
 .header {
     z-index: 99;
     left: 0;
@@ -49,8 +14,10 @@ body {
     top: 0;
     transition: all 0.3s ease-in-out;
     overflow: visible;
-    background: rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(217, 217, 217);
+    background: rgb(255, 255, 255);
     position: sticky;
+    padding: rem(16) 0;
     @include tablet-md {
         margin-bottom: rem(0);
         position: sticky;
@@ -67,13 +34,7 @@ body {
 
     .logo {
         img {
-					width: rem(170);
-            @include mobile-sm {
-                width: rem(100);
-                object-fit: cover;
-                image-rendering: -webkit-optimize-contrast;
-                image-rendering: optimizeQuality;
-            }
+            width: rem(170);
         }
     }
     nav {
@@ -118,10 +79,8 @@ body {
                     }
                 }
                 a {
-                    /* H5 upper */
-                    /* H5 regular */
-                    color: rgb(248, 244, 241);
-                    font-family: 'Mulish';
+                    color: rgb(50, 50, 50);
+                    font-family: 'e-Ukraine Head';
                     font-size: clamp(rem(14), vw(16), rem(16));
                     font-weight: 400;
 
@@ -129,15 +88,10 @@ body {
                     transition: all 0.3s;
                     text-transform: uppercase;
                     &:hover {
-                        background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        background-clip: text;
-                        text-fill-color: transparent;
+                        color: rgb(196, 156, 77);
                     }
                 }
 
-                // Sub menu
                 ul {
                     flex-direction: column;
                     gap: 0;
@@ -145,11 +99,10 @@ body {
                     position: absolute;
                     z-index: 1;
                     width: rem(240);
-                    background: rgb(6, 26, 54);
                     visibility: hidden;
                     opacity: 0;
                     top: 100%;
-                    left: 0;
+                    right: 0;
                     padding-top: rem(27);
 
                     li {
@@ -246,10 +199,10 @@ body {
 
         small {
             position: absolute;
-            background: linear-gradient(127.78deg, rgb(195, 154, 45) 12.056%, rgb(234, 211, 109) 40.204%, rgb(201, 160, 52) 89.261%);
+            background: rgb(50, 50, 50);
             left: 0;
             top: rem(9);
-            width: 60%;
+            width: 100%;
             height: 2px;
             transition: all 0.1s;
         }
@@ -257,7 +210,7 @@ body {
         &::before,
         &::after {
             content: '';
-            background: linear-gradient(127.78deg, rgb(195, 154, 45) 12.056%, rgb(234, 211, 109) 40.204%, rgb(201, 160, 52) 89.261%);
+            background: rgb(50, 50, 50);
             position: absolute;
             width: 100%;
             height: rem(2);
@@ -271,6 +224,7 @@ body {
 
         &::after {
             bottom: 0;
+						width: 60%;
         }
     }
 
@@ -280,14 +234,13 @@ body {
         }
         nav {
             display: block;
-            position: absolute;
-
-            background: rgb(0, 0, 0);
-            left: -100%;
+            position: fixed;
+            background: white;
+            right: -100%;
             top: 0;
             height: 200vh;
             z-index: 10;
-            padding-top: rem(90);
+            padding-top: rem(80);
             padding-left: rem(24);
             padding-right: rem(24);
             overflow: auto;
@@ -328,30 +281,7 @@ body {
 
             &.is-active {
                 display: block;
-                left: 0;
-
-                .close {
-                    position: absolute;
-                    width: rem(25);
-                    height: rem(25);
-                    right: rem(15);
-                    top: rem(15);
-                    &::after,
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        width: rem(25);
-                        height: rem(2);
-                        background-color: $white;
-                    }
-                    &:after {
-                        transform: rotate(45deg);
-                    }
-
-                    &::before {
-                        transform: rotate(-45deg);
-                    }
-                }
+                right: 0;
             }
         }
 

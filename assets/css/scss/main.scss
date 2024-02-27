@@ -7,9 +7,9 @@ html {
 
 body {
     font-size: $bodyfontsize;
-    font-family: 'Century Gothic';
+    font-family: 'e-Ukraine Head';
     line-height: 1.25;
-    font-weight: 400;
+    font-weight: 200;
     color: rgb(23, 22, 20);
 }
 main {
@@ -18,31 +18,33 @@ main {
     flex-direction: column;
 }
 p {
+    font-family: ' e-Ukraine Head';
     margin-bottom: rem(12);
+    font-weight: 200;
 }
 
-.form-title {
-    color: rgb(13, 13, 13);
-    font-family: 'Mulish';
-    font-size: clamp(rem(18), vw(32), rem(32));
-    font-weight: 600;
-    margin-bottom: clamp(rem(8), vw(16), rem(16));
-    text-transform: unset;
+.contact-block__form {
+    background: rgb(196, 156, 77);
+    padding: rem(40) rem(48);
+    @include tablet-smm {
+        padding: rem(20);
+    }
+}
+
+h3.form-title {
+    color: rgb(255, 255, 255);
+    font-size: clamp(rem(16), vw(24), rem(24));
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: clamp(rem(16), vw(24), rem(24));
+    text-align: 0;
 }
 
 .form-box {
     display: flex;
     flex-direction: column;
-    gap: rem(8);
+    gap: rem(3);
     margin-bottom: clamp(rem(16), vw(24), rem(24));
-    .box {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: rem(8);
-        @include tablet-md {
-            grid-template-columns: 1fr;
-        }
-    }
     input,
     textarea {
         background: transparent;
@@ -50,11 +52,13 @@ p {
         padding: clamp(rem(12), vw(16), rem(16));
         width: 100%;
         border-radius: 0;
-        border-bottom: 1px solid rgb(13, 13, 13);
-
+        border: 1px solid rgb(225, 205, 164);
+        color: rgb(225, 205, 164);
+        font-family: 'e-Ukraine Head';
         &::placeholder {
+            color: rgb(225, 205, 164);
             font-size: clamp(rem(12), vw(16), rem(16));
-            font-weight: 400;
+            font-weight: 200;
         }
     }
 }

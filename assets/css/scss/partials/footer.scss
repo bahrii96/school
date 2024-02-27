@@ -6,8 +6,8 @@
     margin-top: auto;
     &__top {
         display: grid;
-        padding: rem(16) 0;
-        grid-template-columns: 1fr 1fr 1fr 1.3fr 0.7fr;
+        padding: rem(24) 0;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: rem(24);
         @include tablet-md {
             grid-template-columns: 1fr;
@@ -24,16 +24,14 @@
                 align-items: center;
             }
             a {
-                color: rgb(193, 189, 174);
+                color: rgb(217, 217, 217);
+                font-family: 'e-Ukraine Head';
                 font-size: clamp(rem(14), vw(16), rem(16));
                 font-weight: 400;
                 transition: all 0.3s;
+                text-transform: uppercase;
                 &:hover {
-                    background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip: text;
-                    text-fill-color: transparent;
+                    color: rgb(196, 156, 77);
                 }
             }
         }
@@ -47,69 +45,40 @@
             align-items: center;
         }
         i {
-            background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
+            color: white;
             margin-left: rem(4);
         }
         a {
-            color: rgb(193, 189, 174);
-            font-size: clamp(rem(14), vw(16), rem(16));
+            color: rgb(217, 217, 217);
+            font-family: 'e-Ukraine Head';
             font-weight: 400;
             transition: all 0.3s;
             &:hover {
-                background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-fill-color: transparent;
+                color: rgb(196, 156, 77);
             }
         }
     }
 
     &__social {
-        h3 {
-            color: rgb(193, 189, 174);
-            font-size: clamp(rem(12), vw(16), rem(16));
-            font-weight: 400;
-            text-transform: uppercase;
-            margin-bottom: clamp(rem(4), vw(24), rem(24));
-            @include tablet-md {
-                text-align: center;
-            }
-        }
         &-box {
             display: flex;
             gap: rem(14);
+            margin-top: rem(24);
             @include tablet-md {
                 justify-content: center;
             }
-            i {
-                background: linear-gradient(127.78deg, rgb(195, 154, 45), rgb(234, 211, 109), rgb(201, 160, 52));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                text-fill-color: transparent;
-                margin-left: rem(4);
-                transition: all 0.3s;
-                font-size: rem(18);
-                &:hover {
-                    opacity: 0.7;
-                }
+        }
+        &-item {
+            transition: all 0.3s;
+
+            &:hover {
+                filter: contrast(0.5);
             }
         }
     }
     .logo {
         img {
             width: rem(170);
-            @include mobile-sm {
-                width: rem(100);
-                object-fit: cover;
-                image-rendering: -webkit-optimize-contrast;
-                image-rendering: optimizeQuality;
-            }
             @include tablet-md {
                 margin: auto;
             }
@@ -137,33 +106,28 @@
 }
 
 .popup-box {
-    padding: clamp(rem(16), vw(40), rem(40)) clamp(rem(16), vw(80), rem(80));
-    background-size: cover;
-    max-width: rem(810) !important;
-    min-height: rem(464);
-    @include tablet-smm {
-        min-height: auto;
+    padding: rem(24) !important;
+    background: rgb(196, 156, 77) !important;
+    max-width: rem(500) !important;
+    svg path {
+        fill: white !important;
     }
-    .wpcf7 .form-title {
-        display: none;
-    }
-    h2 {
-        text-align: center;
-    }
+			@include tablet-sm {
+			max-width: rem(310)!important;
+		}
 }
 .popup-answer__box {
+    h2 {
+        color: rgb(255, 255, 255);
+        font-family: 'e-Ukraine Head';
+        font-size: clamp(rem(16), vw(24), rem(24));
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: rem(460);
-    @include tablet-smm {
-        height: auto;
-    }
-    .answer-btn {
-        text-align: center;
-        button {
-            margin-right: rem(60);
-        }
+    gap: rem(16);
+    img {
+        margin-left: auto;
     }
 }
 

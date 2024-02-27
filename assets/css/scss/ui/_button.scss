@@ -1,91 +1,35 @@
 .btn-bl {
     display: inline-flex;
-	background:transparent;
-    color: rgb(23, 22, 20);
-    font-family: 'Century Gothic';
+    background: rgb(9, 7, 0);
+    color: rgb(217, 217, 217);
+    font-family: 'e-Ukraine Head';
     font-size: clamp(rem(12), vw(16), rem(16));
     font-weight: 400;
     text-transform: uppercase;
-    position: relative;
-    padding: rem(8) rem(20) rem(8) rem(0);
-		border:none;
+    padding: rem(16) rem(48);
+    transition: all 0.3s;
+    border: 2px solid rgb(9, 7, 0);
+    border-radius: 0;
     &:hover {
-        &::after {
-            background-image: url('./../images/btn-bl-hv.svg');
-        }
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        background-repeat: no-repeat;
-        width: rem(64);
-        height: rem(48);
-        top: 50%;
-        right: rem(-60);
-        transition: all 0.3s;
-        background-size: cover;
-        transform: translateY(-50%);
-        background-image: url('./../images/btn-bl.svg');
+        color: rgb(9, 7, 0);
+        background: transparent;
     }
 }
 .btn {
     display: inline-flex;
-	background:transparent;
-    color: rgb(193, 189, 174);
-    font-family: 'Century Gothic';
+    background: rgb(196, 156, 77);
+    color: rgb(217, 217, 217);
+    font-family: 'e-Ukraine Head';
     font-size: clamp(rem(12), vw(16), rem(16));
     font-weight: 400;
     text-transform: uppercase;
-    position: relative;
-    padding: rem(8) rem(20) rem(8) rem(0);border:none;
+    padding: rem(16) rem(48);
+    transition: all 0.3s;
+    border: 2px solid rgb(196, 156, 77);
+    border-radius: 0;
     &:hover {
-        &::after {
-            background-image: url('./../images/btn-white-hov.svg');
-        }
+        color: rgb(196, 156, 77);
+        background: transparent;
     }
-    &::after {
-        content: '';
-        position: absolute;
-        background-repeat: no-repeat;
-        width: rem(64);
-        height: rem(48);
-        top: 50%;
-        right: rem(-60);
-        transition: all 0.3s;
-        background-size: cover;
-        transform: translateY(-50%);
-        background-image: url('./../images/btn-white.svg');
-    }
-}
-
-.form-submit {
-    p {
-        display: inline;
-        position: relative;
-         &:hover {
-        &::after {
-            background-image: url('./../images/btn-bl-hv.svg');
-        }
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        background-repeat: no-repeat;
-        width: rem(64);
-        height: rem(48);
-        top: 50%;
-        right: rem(-60);
-        transition: all 0.3s;
-        background-size: cover;
-        transform: translateY(-50%);
-        background-image: url('./../images/btn-bl.svg');
-    }
-    }
-	
-     
-            text-align: center;
-            margin-left: rem(-58);
-        
-    
 }
 

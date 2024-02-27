@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'e-Ukraine Head';
+    src: url('e-UkraineHead-Regular.woff2') format('woff2'),
+        url('e-UkraineHead-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'e-Ukraine Head';
+    src: url('e-UkraineHead-UltraLight.woff2') format('woff2'),
+        url('e-UkraineHead-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+

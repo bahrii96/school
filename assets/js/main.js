@@ -19,25 +19,10 @@
             }
         }
 
-        function showImagesForActiveAccordion() {
-            var activeAccordionId = $('#accordion h3.ui-state-active').data('accordion-id');
-
-            // Знімаємо активний клас з усіх елементів
-            $('.services-block__image-box [data-accordion-id]').removeClass('active');
-
-            // Додаємо активний клас лише для потрібних елементів
-            $('.services-block__image-box [data-accordion-id="' + activeAccordionId + '"]').addClass('active');
-        }
-
         $('#accordion').accordion({
             header: '> div > h3',
             heightStyle: 'content',
-            activate: function (event, ui) {
-                showImagesForActiveAccordion();
-            },
         });
-
-        showImagesForActiveAccordion();
 
         $('.services-block__item:has(.ui-state-active)').addClass('active');
 
@@ -49,14 +34,50 @@
                 $(this).addClass('active');
             }
         });
+
         var swiper = new Swiper('.testimonials-block__swiper', {
             slidesPerView: 1.2,
             spaceBetween: 8,
-            centeredSlides: true,
+
+            breakpoints: {
+                767: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-next',
+                prevEl: '.swiper-prev',
+            },
+            autoplay: {
+                delay: 5000,
+            },
+            loop: true,
+        });
+
+        var swiper = new Swiper('.products-block__swiper ', {
+            slidesPerView: 1.4,
+            spaceBetween: 8,
 
             breakpoints: {
                 767: {
                     slidesPerView: 4.1,
+                    spaceBetween: 20,
+                },
+            },
+
+            autoplay: {
+                delay: 5000,
+            },
+            loop: true,
+        });
+        var swiper = new Swiper('.gallery-block__swiper', {
+            slidesPerView: 1.4,
+            spaceBetween: 8,
+
+            breakpoints: {
+                767: {
+                    slidesPerView: 4,
                     spaceBetween: 20,
                 },
             },
@@ -102,27 +123,31 @@
         $('body .side-bar .close-sidebar').click(function (e) {
             $('body').removeClass('fixed');
             $('body .side-bar').removeClass('show');
-				});
-			
-			  var nav = document.querySelector('nav');
-		});
-	
-	
+        });
+
+        var nav = document.querySelector('nav');
+    });
 })(jQuery);
+
 
 document.addEventListener(
     'wpcf7mailsent',
     function (event) {
-        $.fancybox.close();
-        $.fancybox.open({
-            src: '#popup-answer',
-            type: 'inline',
-            opts: {
-                afterClose: function () {},
-            },
-        });
+        var fancyboxInstance = $.fancybox.getInstance();
+
+        if (fancyboxInstance) {
+            fancyboxInstance.close(); // Закриваємо відкритий попап
+            $.fancybox.open({
+                src: '#popup-answer',
+                type: 'inline',
+                opts: {
+                    afterClose: function () {},
+                },
+            });
+        } else {
+            window.location.href = '/success';
+        }
     },
     false,
 );
-
 
