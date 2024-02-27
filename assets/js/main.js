@@ -53,6 +53,7 @@
                 delay: 5000,
             },
             loop: true,
+            speed: 1000,
         });
 
         var swiper = new Swiper('.products-block__swiper ', {
@@ -70,6 +71,7 @@
                 delay: 5000,
             },
             loop: true,
+            speed: 1000,
         });
         var swiper = new Swiper('.gallery-block__swiper', {
             slidesPerView: 1.4,
@@ -86,6 +88,7 @@
                 delay: 5000,
             },
             loop: true,
+            speed: 1000,
         });
 
         $(document).on('touchstart', function (e) {
@@ -150,4 +153,7 @@ document.addEventListener(
     },
     false,
 );
+
+
+
 
