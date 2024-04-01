@@ -7,10 +7,11 @@ html {
 
 body {
     font-size: $bodyfontsize;
-    font-family: 'e-Ukraine Head';
+    color: rgb(248, 248, 248);
+    font-family: 'Unbounded';
     line-height: 1.25;
-    font-weight: 200;
-    color: rgb(23, 22, 20);
+    font-weight: 300;
+    background: rgb(31, 30, 29);
 }
 main {
     min-height: 86vh;
@@ -18,49 +19,53 @@ main {
     flex-direction: column;
 }
 p {
-    font-family: ' e-Ukraine Head';
+    font-family: 'Unbounded';
     margin-bottom: rem(12);
-    font-weight: 200;
-}
-
-.contact-block__form {
-    background: rgb(196, 156, 77);
-    padding: rem(40) rem(48);
-    @include tablet-smm {
-        padding: rem(20);
-    }
-}
-
-h3.form-title {
-    color: rgb(255, 255, 255);
-    font-size: clamp(rem(16), vw(24), rem(24));
-    font-weight: 400;
-    text-transform: uppercase;
-    margin-bottom: clamp(rem(16), vw(24), rem(24));
-    text-align: 0;
 }
 
 .form-box {
     display: flex;
     flex-direction: column;
-    gap: rem(3);
-    margin-bottom: clamp(rem(16), vw(24), rem(24));
+    margin: clamp(rem(16), vw(24), rem(24)) 0 rem(0);
     input,
     textarea {
-        background: transparent;
+        border-radius: rem(16);
+        background: rgb(47, 47, 47);
         border: none;
-        padding: clamp(rem(12), vw(16), rem(16));
+        padding: clamp(rem(14), vw(18), rem(18)) clamp(rem(12), vw(16), rem(16));
         width: 100%;
-        border-radius: 0;
-        border: 1px solid rgb(225, 205, 164);
-        color: rgb(225, 205, 164);
-        font-family: 'e-Ukraine Head';
+
+        color: white;
+        font-family: 'Unbounded';
         &::placeholder {
-            color: rgb(225, 205, 164);
-            font-size: clamp(rem(12), vw(16), rem(16));
-            font-weight: 200;
+            color: rgb(75, 74, 73);
+            font-size: clamp(rem(14), vw(16), rem(16));
+            font-family: 'Unbounded';
+            font-weight: 300;
         }
     }
+    .box {
+        display: flex;
+        gap: rem(12);
+        @include tablet-sm {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+}
+.fancybox-slide--html .fancybox-close-small {
+    right: 20px !important;
+    top: 20px !important;
+    @include tablet-sm {
+        right: 10px !important;
+        top: 10px !important;
+    }
+}
+.fancybox-bg {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+.fancybox-container {
+    backdrop-filter: blur(20px) !important;
 }
 @include tablet-smm {
     .btn {

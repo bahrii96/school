@@ -28,9 +28,7 @@ register_nav_menus(array(
 register_nav_menus(array(
 	'primary_footer' => __('Primary Footer First'),
 ));
-register_nav_menus(array(
-	'primary_footer_second' => __('Primary Footer Second'),
-));
+
 
 
 add_theme_support('post-thumbnails');
@@ -57,41 +55,6 @@ include 'inc/features.php';
 
 require_once get_stylesheet_directory() . '/inc/navigation.php';
 
-
-function toolset_fix_custom_posts_per_page($query_string)
-{
-	if (is_admin() || !is_array($query_string))
-		return $query_string;
-	$post_per_page = get_option('posts_per_page');
-	$post_types_to_fix = array(
-		array(
-			'post_type' => 'testimonial',
-			'posts_per_page' => 30
-		),
-		// add another if you want
-		/*
-      array(
-          'post_type' => 'movie',
-          'posts_per_page' => 2
-      ),
-      */
-	);
-
-	foreach ($post_types_to_fix as $fix) {
-		if (
-			array_key_exists('post_type', $query_string)
-			&& $query_string['post_type'] == $fix['post_type']
-		) {
-			$query_string['posts_per_page'] = $fix['posts_per_page'];
-			return $query_string;
-		}
-	}
-
-	return $query_string;
-}
-
-add_filter('request', 'toolset_fix_custom_posts_per_page');
-
 function add_paragraph_tags_to_acf_wysiwyg_content($value, $post_id, $field)
 {
 	if ($field['type'] === 'wysiwyg') {
@@ -113,11 +76,35 @@ function add_paragraph_tags_to_acf_wysiwyg_content($value, $post_id, $field)
 add_filter('acf/format_value', 'add_paragraph_tags_to_acf_wysiwyg_content', 10, 3);
 
 
-function year_shortcode()
+
+
+// =========
+
+// Додаємо код в functions.php чи в ваш плагін
+function my_enqueue_scripts()
 {
-	$year = date_i18n('Y');
-	return $year;
+	wp_enqueue_script('custom-ajax', get_template_directory_uri() . '/assets/js/ajax-script.js', array('jquery'), '1.0', true);
+
+	// Визначаємо ajaxurl через wp_localize_script
+	wp_localize_script('custom-ajax', 'my_ajax_object', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
-add_shortcode('year', 'year_shortcode');
 
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
+// Функція для обробки AJAX-запиту
+function my_custom_function()
+{
+	// Обробка отриманих даних
+	// $_POST містить дані, які ви передали через AJAX-запит
+	// Ваш код обробки даних і повернення результату
+
+	// Приклад: виведення отриманих даних
+	echo 'Отримано дані: ' . $_POST['some_data'];
+
+	// Важливо завершити виконання скрипта
+	wp_die();
+}
+
+// Додаємо дію для обробки AJAX-запиту в WordPress
+add_action('wp_ajax_my_custom_action', 'my_custom_function');
+add_action('wp_ajax_nopriv_my_custom_action', 'my_custom_function');

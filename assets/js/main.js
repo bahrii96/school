@@ -35,19 +35,23 @@
             }
         });
 
-        var swiper = new Swiper('.testimonials-block__swiper', {
-            slidesPerView: 1.2,
+        var swiper = new Swiper('.we-work__swiper', {
+            slidesPerView: 2,
             spaceBetween: 8,
 
             breakpoints: {
                 767: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 24,
+                },
+                976: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
                 },
             },
             navigation: {
-                nextEl: '.swiper-next',
-                prevEl: '.swiper-prev',
+                nextEl: '.swiper-next-courses',
+                prevEl: '.swiper-prev-courses',
             },
             autoplay: {
                 delay: 5000,
@@ -56,40 +60,71 @@
             speed: 1000,
         });
 
-        var swiper = new Swiper('.products-block__swiper ', {
-            slidesPerView: 1.4,
+        var swiper = new Swiper('.teachers-block__swiper ', {
+            slidesPerView: 1,
             spaceBetween: 8,
 
             breakpoints: {
                 767: {
-                    slidesPerView: 4.1,
-                    spaceBetween: 20,
+                    slidesPerView: 2,
+                    spaceBetween: 40,
                 },
             },
-
+            navigation: {
+                nextEl: '.swiper-next-teachers',
+                prevEl: '.swiper-prev-teachers',
+            },
             autoplay: {
                 delay: 5000,
             },
             loop: true,
             speed: 1000,
         });
-        var swiper = new Swiper('.gallery-block__swiper', {
-            slidesPerView: 1.4,
+        var swiper = new Swiper('.testimonials-block__swiper', {
+            slidesPerView: 1,
             spaceBetween: 8,
 
             breakpoints: {
                 767: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+                976: {
                     slidesPerView: 4,
-                    spaceBetween: 20,
+                    spaceBetween: 40,
                 },
             },
-
+            navigation: {
+                nextEl: '.swiper-next-testimonials',
+                prevEl: '.swiper-prev-testimonials',
+            },
             autoplay: {
                 delay: 5000,
             },
             loop: true,
             speed: 1000,
         });
+
+        $(function () {
+            $('#languages').tabs();
+        });
+			
+			$(function () {
+                $('[id^="course-duration-"]').tabs();
+			});
+			
+			$(function () {
+                $('[id^="course-type-name-"]').tabs();
+			});
+
+        $(function () {
+                $('[id^="accordion-"]').accordion({
+                    active: false,
+                    collapsible: true,
+                    heightStyle: 'content',
+                });
+        });
+
 
         $(document).on('touchstart', function (e) {
             if (!$(e.target).closest('nav').length && !$(e.target).hasClass('menu-toggle')) {
@@ -132,7 +167,6 @@
     });
 })(jQuery);
 
-
 document.addEventListener(
     'wpcf7mailsent',
     function (event) {
@@ -153,6 +187,15 @@ document.addEventListener(
     },
     false,
 );
+
+
+
+
+
+
+
+
+
 
 
 

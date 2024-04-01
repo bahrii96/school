@@ -10,7 +10,7 @@ $terms = get_the_terms($post->ID, 'category'); ?>
 			imageShowPost(get_post_thumbnail_id(), 'full');
 		} else {
 		?>
-			<img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/thumbnail-default.jpg'; ?>" />
+			<img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/thumbnail-default.png'; ?>" />
 		<?php
 		}
 		?>
